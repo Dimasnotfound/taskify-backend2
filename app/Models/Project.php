@@ -13,7 +13,7 @@ class Project extends Model
 
     public function columns()
     {
-        return $this->hasMany(Column::class);
+        return $this->hasMany(UserStoryTask::class);
     }
 
     public function owner()

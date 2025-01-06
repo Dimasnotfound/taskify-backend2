@@ -18,9 +18,9 @@ class Task extends Model
         'column_id'
     ];
 
-    public function column()
+    public function userStoryTaskId()
     {
-        return $this->belongsTo(Column::class);
+        return $this->belongsTo(UserStoryTask::class);
     }
 
     public function assignedUser()
