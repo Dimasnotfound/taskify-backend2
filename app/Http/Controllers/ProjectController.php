@@ -58,4 +58,21 @@ class ProjectController extends Controller
             ], 500);
         }
     }
+
+    public function tasks()
+    {
+        try {
+            $userId = Auth::id();
+            $tasks = Task::where('assigned_to', $userId)->get();
+            return response()->json([
+                'status' => 'success',
+                'data' => $tasks,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Internal Server Error',
+            ], 500);
+        }
+    }
 }

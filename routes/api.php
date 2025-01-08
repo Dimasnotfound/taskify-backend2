@@ -13,4 +13,5 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::get('/project-summary', [ProjectController::class, 'summary']);
+    Route::get('/tasks',[ProjectController::class, 'tasks']);
 });
